@@ -7,14 +7,25 @@
 
 import UIKit
 
+@IBDesignable
 class RoundButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBInspectable var roundButton: CGFloat = 0 {
+        didSet {
+            customizeView()
+        }
     }
-    */
+    
+    
+    override func prepareForInterfaceBuilder() {
+       customizeView()
+    }
+    
+    
+    func customizeView () {
+        layer.cornerRadius = 40
+    
+    }
+    
+    
 
 }

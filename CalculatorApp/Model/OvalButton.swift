@@ -7,14 +7,22 @@
 
 import UIKit
 
+@IBDesignable
 class OvalButton: UIButton {
+    
+        @IBInspectable var ovalButton: CGFloat = 0 {
+            didSet {
+                customizeView()
+            }
+        }
+        
+        
+        override func prepareForInterfaceBuilder() {
+           customizeView()
+        }
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    func customizeView () {
+        layer.cornerRadius = 40
+    
     }
-    */
-
 }
